@@ -3,7 +3,7 @@
 #include <cassert>
 #include <iostream>
 
-template<typename T> // 템플릿 사용
+template<typename T> 
 class Stack
 {
 public:
@@ -30,20 +30,20 @@ public:
 	bool IsEmpty() const
 	{
 
-		return top_ == -1; // TODO:
+		return top_ == -1;
 	}
 
 	int Size() const
 	{
 		
-		return top_ + 1; //TODO:
+		return top_ + 1;
 	}
 
 	void Print()
 	{
 		using namespace std;
 
-		for (int i = 0; i < Size(); i++) // Size() 사용
+		for (int i = 0; i < Size(); i++)
 			cout << stack_[i] << " ";
 		cout << endl;
 	}
@@ -59,10 +59,9 @@ public:
 	// Insert item into the TOP of the stack
 	void Push(const T& item)
 	{
-		// TODO: 필요하면 리사이즈 
 		if (top_ == capacity_ - 1)
 			Resize(capacity_ * 2);
-		// TODO:
+		
 		stack_[++top_] = item;
 		
 	}
@@ -75,8 +74,8 @@ public:
 		top_--;
 	}
 
-protected: // 뒤에서 상속해서 사용
+protected:
 	T* stack_ = nullptr;
-	int top_ = -1; // 0 아님
+	int top_ = -1; 
 	int capacity_ = 0;
 };

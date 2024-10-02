@@ -48,7 +48,6 @@ public:
 		cout << endl;
 	}
 
-	// Returns TOP element of stack.
 	T& Top() const
 	{
 		assert(!IsEmpty());
@@ -56,7 +55,6 @@ public:
 		return stack_[top_];
 	}
 
-	// Insert item into the TOP of the stack
 	void Push(const T& item)
 	{
 		if (top_ == capacity_ - 1)
@@ -66,7 +64,6 @@ public:
 		
 	}
 
-	// Delete the TOP element of the stack
 	void Pop()
 	{
 		assert(!IsEmpty());
